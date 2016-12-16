@@ -1,0 +1,27 @@
+{
+  "name": "PixelPainter",
+  "version": "1.0.0",
+  "description": "PixelPainter ============",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhoun/PixelPainter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhoun/PixelPainter/issues"
+  },
+  "xo": {
+    "esnext": true,
+    "space": true,
+    "globals": [
+      "window"
+    ]
+  }
+  "homepage": "https://github.com/jhoun/PixelPainter#readme"
+}

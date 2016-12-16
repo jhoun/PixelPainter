@@ -6,18 +6,27 @@ tableDiv.className = "tableDiv";
 main.appendChild(tableDiv);
 
   //Color Table
-  var colorTable = document.createElement('table');
+  var colorTable = document.createElement('div');
   colorTable.id = "colorTable";
   tableDiv.appendChild(colorTable);
 
     //Rows for color rows
-    var colorRows = document.createElement("tr");
-    colorRows.id =
+    var colorRows = document.createElement("div");
+
 
   //Grid Table
-  var gridTable = document.createElement('table');
+  var gridTable = document.createElement('div');
   gridTable.id = "gridTable";
   tableDiv.appendChild(gridTable);
+
+
+      // //Grid Table table data
+      var gridData = document.getElementById('gridTable');
+      gridData.style.backgroundcolor = "black";
+      gridData.width = "20px";
+      gridData.outline = "2px";
+      gridData.height = "20px";
+
 
 
 
