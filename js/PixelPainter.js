@@ -1,23 +1,50 @@
 var main= document.getElementById('pixelPainter');
 
-//The Tables
-var tableDiv = document.createElement('div');
-tableDiv.className = "tableDiv";
-main.appendChild(tableDiv);
+//The Grids
+var gridsDiv = document.createElement('div');
+gridsDiv.className = "gridsDiv";
+main.appendChild(gridsDiv);
 
-  //Color Table
-  var colorTable = document.createElement('table');
-  colorTable.id = "colorTable";
-  tableDiv.appendChild(colorTable);
+  //Color Grid
+  var colorGrid = document.createElement('div');
+  colorGrid.id = "colorGrid";
+  gridsDiv.appendChild(colorGrid);
 
-    //Rows for color rows
-    var colorRows = document.createElement("tr");
-    colorRows.id =
 
-  //Grid Table
-  var gridTable = document.createElement('table');
-  gridTable.id = "gridTable";
-  tableDiv.appendChild(gridTable);
+  //Painting Grid
+  var paintingGrid = document.createElement('div');
+  paintingGrid.id = "paintingGrid";
+  gridsDiv.appendChild(paintingGrid);
+
+
+
+  function createDiv(numRows, numCell) {
+
+    for(var i = 0; i< numRows; i++) {
+      var row = document.createElement('div');
+      paintingGrid.appendChild(row);
+      for(var x = 0; x < numCell; x++) {
+        cell = document.createElement('div');
+        row.appendChild(cell);
+        cell.style.backgroundColor = 'red';
+        cell.style.display = "inline-block";
+        cell.style.height = '5px';
+        cell.style.width = '5px';
+
+        cell.addEventListener("mouseover", function(){
+          this.style.backgroundColor = "green";
+          console.log(this)
+        })
+        x++
+      }
+      i++
+    }
+  }
+
+
+
+  createDiv(100,100);
+
 
 
 
@@ -42,4 +69,11 @@ main.appendChild(clearDiv);
   clearButton.id = "clear";
   clearButton.innerHTML = "clear";
   clearDiv.appendChild(clearButton);
+
+
+
+
+
+
+
 
