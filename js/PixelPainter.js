@@ -10,17 +10,7 @@ main.appendChild(gridsDiv);
   colorGrid.id = "colorGrid";
   gridsDiv.appendChild(colorGrid);
 
-
-
-
-  //Painting Grid
-  var paintingGrid = document.createElement('div');
-  paintingGrid.id = "paintingGrid";
-  gridsDiv.appendChild(paintingGrid);
-
-
-
-  function createDiv(numRows, numCell) {
+    function createColorDiv(numRows, numCell) {
 
     for(var i = 0; i< numRows; i++) {
       var row = document.createElement('div');
@@ -28,8 +18,9 @@ main.appendChild(gridsDiv);
       for(var x = 0; x < numCell; x++) {
         cell = document.createElement('div');
         row.appendChild(cell);
+        cell.id = "div" + x;
         cell.style.backgroundColor = 'white';
-        cell.style.border = "1px solid black";
+        cell.style.border = "thin solid black"
         cell.style.display = "inline-block";
         cell.style.height = '10px';
         cell.style.width = '10px';
@@ -44,7 +35,47 @@ main.appendChild(gridsDiv);
 
 
 
+
+  //Painting Grid
+  var paintingGrid = document.createElement('div');
+  paintingGrid.id = "paintingGrid";
+  gridsDiv.appendChild(paintingGrid);
+
+
+
+  function createPaintDiv(numRows, numCell) {
+
+    for(var i = 0; i< numRows; i++) {
+      var row = document.createElement('div');
+      paintingGrid.appendChild(row);
+      for(var x = 0; x < numCell; x++) {
+        cell = document.createElement('div');
+        row.appendChild(cell);
+
+        cell.style.backgroundColor = 'white';
+        cell.style.border = "1px solid black";
+
+        cell.id = "div" + x;
+        cell.style.backgroundColor = 'white';
+        cell.style.border = "thin solid black"
+        cell.style.display = "inline-block";
+        cell.style.height = '10px';
+        cell.style.width = '10px';
+
+        cell.addEventListener("mouseover", function(){
+          this.style.backgroundColor = "green";
+          console.log(this)
+        })
+      }
+    }
+  }
+
+
+
+
   createDiv(20,20);
+  createPaintDiv(25,40);
+
 
 
 
