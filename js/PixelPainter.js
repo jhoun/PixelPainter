@@ -41,6 +41,8 @@ main.appendChild(gridsDiv);
   paintingGrid.id = "paintingGrid";
   gridsDiv.appendChild(paintingGrid);
 
+  var colorsArr = [];
+
 
 
   function createPaintDiv(numRows, numCell) {
