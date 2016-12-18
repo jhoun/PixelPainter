@@ -1,5 +1,5 @@
 {
-  "name": "PixelPainter",
+  "name": "pixelpainter",
   "version": "1.0.0",
   "description": "PixelPainter ============",
   "main": "index.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/jhoun/PixelPainter.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -22,6 +21,11 @@
     "globals": [
       "window"
     ]
+  },
+  "homepage": "https://github.com/jhoun/PixelPainter#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-sass": "^3.0.0"
   }
-  "homepage": "https://github.com/jhoun/PixelPainter#readme"
 }
