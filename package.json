@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/jhoun/PixelPainter.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -27,5 +28,12 @@
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0"
-  }
+  },
+    "esnext": true,
+    "space": true,
+    "globals": [
+      "window"
+    ]
+  },
+  "homepage": "https://github.com/jhoun/PixelPainter#readme"
 }
