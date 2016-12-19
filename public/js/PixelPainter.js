@@ -1,5 +1,7 @@
 var main = document.getElementById('pixelPainter');
 
+var selectedColor;
+
 //The Grids
 var gridsDiv = document.createElement('div');
 gridsDiv.className = "gridsDiv";
@@ -48,13 +50,16 @@ main.appendChild(gridsDiv);
 
   createColorDiv(11,6);
 
-
+// creates the colorSwatch and lets you select a color to paint
   var colorCells =  document.querySelectorAll('div.colors');
-  console.log(colorCells);
   for(var i = 0; i < colorCells.length; ++i) {
     colorCells[i].style.backgroundColor = colorsArr[i];
-
+    colorCells[i].id = colorsArr[i];
+    colorCells[i].addEventListener('click', function(e) {
+      selectedColor = e.currentTarget.id
+    })
   }
+
 
 
 
@@ -66,9 +71,6 @@ main.appendChild(gridsDiv);
   gridsDiv.appendChild(paintingGrid);
 
 
-
-
-console.log(colorsArr.length)
 
   function createPaintDiv(numRows, numCell) {
 
@@ -90,8 +92,7 @@ console.log(colorsArr.length)
         cell.style.width = '10px';
 
         cell.addEventListener("mouseover", function(){
-          this.style.backgroundColor = "green";
-          console.log(this)
+          this.style.backgroundColor = selectedColor;
         })
       }
     }
