@@ -1,4 +1,4 @@
-var main= document.getElementById('pixelPainter');
+var main = document.getElementById('pixelPainter');
 
 //The Grids
 var gridsDiv = document.createElement('div');
@@ -45,6 +45,7 @@ main.appendChild(gridsDiv);
   }
 
 
+
   createColorDiv(11,6);
 
 
@@ -59,6 +60,14 @@ main.appendChild(gridsDiv);
 
 
 
+  //Painting Grid
+  var paintingGrid = document.createElement('div');
+  paintingGrid.id = "paintingGrid";
+  gridsDiv.appendChild(paintingGrid);
+
+
+
+
 console.log(colorsArr.length)
 
   function createPaintDiv(numRows, numCell) {
@@ -69,6 +78,10 @@ console.log(colorsArr.length)
       for(var x = 0; x < numCell; x++) {
         cell = document.createElement('div');
         row.appendChild(cell);
+
+        cell.style.backgroundColor = 'white';
+        cell.style.border = "1px solid black";
+
         cell.id = "div" + x;
         cell.style.backgroundColor = 'white';
         cell.style.border = "thin solid black"
@@ -86,7 +99,10 @@ console.log(colorsArr.length)
 
 
 
+
+  createDiv(20,20);
   createPaintDiv(25,40);
+
 
 
 
