@@ -65,12 +65,6 @@ main.appendChild(gridsDiv);
 
 
 
-  //Painting Grid
-  var paintingGrid = document.createElement('div');
-  paintingGrid.id = "paintingGrid";
-  gridsDiv.appendChild(paintingGrid);
-
-
 
   function createPaintDiv(numRows, numCell) {
 
@@ -83,7 +77,7 @@ main.appendChild(gridsDiv);
 
         cell.style.backgroundColor = 'white';
         cell.style.border = "1px solid black";
-
+        cell.classList.add('paintGridCells');
         cell.id = "div" + x;
         cell.style.backgroundColor = 'white';
         cell.style.border = "thin solid black"
@@ -116,6 +110,9 @@ main.appendChild(eraseDiv);
   eraseButton.id = "erase";
   eraseButton.innerHTML = "erase";
   eraseDiv.appendChild(eraseButton);
+  eraseButton.addEventListener('click', function(e) {
+      selectedColor = "white";
+  })
 
 //clear div
 var clearDiv = document.createElement('div');
@@ -124,9 +121,18 @@ main.appendChild(clearDiv);
 
    //Clear Button
   var clearButton = document.createElement('button');
-  clearButton.id = "clear";
-  clearButton.innerHTML = "clear";
-  clearDiv.appendChild(clearButton);
+    clearButton.id = "clear";
+    clearButton.innerHTML = "clear";
+    clearDiv.appendChild(clearButton);
+
+    clearButton.addEventListener('click', function(e) {
+      var toBeCleared = document.getElementsByClassName("paintGridCells");
+      for(var z = 0; z < toBeCleared.length; ++z){
+        toBeCleared[z].style.backgroundColor = "white";
+      }
+  })
+
+
 
 
 
