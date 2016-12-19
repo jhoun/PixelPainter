@@ -99,8 +99,6 @@ console.log(colorsArr.length)
 
 
 
-
-  createDiv(20,20);
   createPaintDiv(25,40);
 
 
