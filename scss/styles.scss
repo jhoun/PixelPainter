@@ -1,8 +1,44 @@
 @import "partials/reset";
 @import "partials/clearfix";
 
-$dark-color : salmon;
+$dark-color : aquamarine;
+
 
 body {
   background: $dark-color;
+  h1 {
+    font-family: 'Concert One', cursive;
+    font-size: 40px;
+    text-align: center;
+  }
+}
+
+
+.gridsDiv {
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  #colorGrid{
+    flex: 0 0 100px;
+    margin: 50px 0 0 100px;
+  }
+  #paintingGrid{
+    flex: 0 0 500px;
+    margin: 50px 0 0 0;
+  }
+}
+
+
+#erase{
+  font-family: 'Concert One', regular;
+  font-size: 20px;
+  width:  72px
+}
+
+#clear{
+  font-family: 'Concert One', regular;
+  font-size: 20px;
+  width:  72px
 }
