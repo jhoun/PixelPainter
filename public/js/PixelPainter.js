@@ -1,50 +1,92 @@
 var main = document.getElementById('pixelPainter');
 
 var selectedColor;
+var clicked = false;
 
 //The Grids
 var gridsDiv = document.createElement('div');
 gridsDiv.className = 'gridsDiv';
 main.appendChild(gridsDiv);
 
-  //Color Grid
-  var colorGrid = document.createElement('div');
-  colorGrid.id = 'colorGrid';
-  gridsDiv.appendChild(colorGrid);
+//Color Grid
+var colorGrid = document.createElement('div');
+colorGrid.id = 'colorGrid';
+gridsDiv.appendChild(colorGrid);
 
-   //Painting Grid
-  var paintingGrid = document.createElement('div');
-  paintingGrid.id = 'paintingGrid';
-  gridsDiv.appendChild(paintingGrid);
+//Painting Grid
+var paintingGrid = document.createElement('div');
+paintingGrid.id = 'paintingGrid';
+gridsDiv.appendChild(paintingGrid);
 
-  var colorsArr = ['#fefa43','#fadb50', '#fef972', '#f1d781', '#39720e',
-  '#3d7b0f', '#c2f543', '#7ff327', '#a5f52e', '#6bc034', '#7df47b', '#a7e58c',
-  '#60a868', '#7bf194', '#79741b', '#487e4f', '#e13233', '#e34e34', '#e88837',
-  '#d03b44', '#6a1113', '#8b2d2e', '#bb6433', '#e87c59', '#bf2f44', '#d6907a',
-  '#e03f90', '#962b2c','#e470af', '#b55a5b', '#da8080', '#efb4bd', '#ec9c7b',
-  '#dd50fa', '#a9337e', '#c175d0', '#c36f8e', '#c46f8f', '#e28074', '#e39f66',
-  '#061773', '#371b75', '#0c1e63', '#113cf6', '#682076', '#6e46d9', '#6393e5',
-  '#77faf9', '#3b8180', '#3a3c7e', '#51baf6', '#b0d3e0', '#55a9a0', '#91caf4',
-  '#adbed8','#685b7f', '#686be5', '#3b6bd7', '#595bc2', '#697786', '#4c7ba9',
-  '#367575', '#74d7c8', '#a2a2a2', '#cecfce', '#000000', '#da8080', '#7bf194', '#79741b', '#487e4f',];
+var colorsArr = ['#fefa43','#fadb50', '#fef972', '#f1d781', '#39720e',
+'#3d7b0f', '#c2f543', '#7ff327', '#a5f52e', '#6bc034', '#7df47b', '#a7e58c',
+'#60a868', '#7bf194', '#79741b', '#487e4f', '#e13233', '#e34e34', '#e88837',
+'#d03b44', '#6a1113', '#8b2d2e', '#bb6433', '#e87c59', '#bf2f44', '#d6907a',
+'#e03f90', '#962b2c','#e470af', '#b55a5b', '#da8080', '#efb4bd', '#ec9c7b',
+'#dd50fa', '#a9337e', '#c175d0', '#c36f8e', '#c46f8f', '#e28074', '#e39f66',
+'#061773', '#371b75', '#0c1e63', '#113cf6', '#682076', '#6e46d9', '#6393e5',
+'#77faf9', '#3b8180', '#3a3c7e', '#51baf6', '#b0d3e0', '#55a9a0', '#91caf4',
+'#adbed8','#685b7f', '#686be5', '#3b6bd7', '#595bc2', '#697786', '#4c7ba9',
+'#367575', '#74d7c8', '#a2a2a2', '#cecfce', '#000000', '#da8080', '#7bf194', '#79741b', '#487e4f',];
 
-    function createColorDiv(numRows, numCell) {
 
-    for(var i = 0; i< numRows; i++) {
-      var row = document.createElement('div');
-      colorGrid.appendChild(row);
-      for(var x = 0; x < numCell; x++) {
-        var colorCounter = 0
-        cell = document.createElement('div');
-        row.appendChild(cell);
-        cell.classList.add('colors');
-        cell.style.border = 'thin solid black'
-        cell.style.display = "inline-block";
-        cell.style.height = '18px';
-        cell.style.width = '18px';
-      }
+//erase div
+var eraseDiv = document.createElement('div');
+eraseDiv.className = 'eraseDiv';
+colorGrid.appendChild(eraseDiv);
+
+//Erase Button
+var eraseButton = document.createElement('button');
+eraseButton.id = 'erase';
+eraseButton.innerHTML = 'erase';
+main.appendChild(eraseButton);
+eraseButton.addEventListener('click', function(e) {
+selectedColor = 'white';
+})
+
+//clear div
+var clearDiv = document.createElement('div');
+clearDiv.className = "clearDiv";
+colorGrid.appendChild(clearDiv);
+
+//Clear Button
+var clearButton = document.createElement('button');
+clearButton.id = 'clear';
+clearButton.innerHTML = 'clear';
+main.appendChild(clearButton);
+
+clearButton.addEventListener('click', function(e) {
+var toBeCleared = document.getElementsByClassName('paintGridCells');
+for(var z = 0; z < toBeCleared.length; ++z){
+  toBeCleared[z].style.backgroundColor = 'white';
+}
+})
+
+//img
+
+var img = document.createElement('img');
+img.src = './js/tv.png';
+main.appendChild(img);
+
+
+
+
+function createColorDiv(numRows, numCell) {
+  for(var i = 0; i< numRows; i++) {
+    var row = document.createElement('div');
+    colorGrid.appendChild(row);
+    for(var x = 0; x < numCell; x++) {
+      var colorCounter = 0
+      cell = document.createElement('div');
+      row.appendChild(cell);
+      cell.classList.add('colors');
+      cell.style.border = 'thin solid black'
+      cell.style.display = "inline-block";
+      cell.style.height = '18px';
+      cell.style.width = '18px';
     }
   }
+}
 
 
 
@@ -60,12 +102,21 @@ main.appendChild(gridsDiv);
     })
   }
 
+  function mouseDownFunc(){
+    this.style.backgroundColor = selectedColor;
+    clicked = true;
+  }
 
+  function mouseUpFunc() {
+    clicked = false;
+  }
 
+  function mouseOverFunc(){
+    if(clicked) {
+            this.style.backgroundColor = selectedColor;
+    }
+  }
 
-console.log(colorsArr.length)
-
-var clicked = false;
   function createPaintDiv(numRows, numCell) {
 
     for(var i = 0; i< numRows; i++) {
@@ -82,18 +133,9 @@ var clicked = false;
         cell.style.height = '50px';
         cell.style.width = '50px';
 
-        cell.addEventListener('mousedown', function(){
-          this.style.backgroundColor = selectedColor;
-          clicked = true;
-        })
-        cell.addEventListener('mouseup', function() {
-          clicked = false;
-        })
-        cell.addEventListener('mouseover', function() {
-          if(clicked) {
-            this.style.backgroundColor = selectedColor;
-          }
-        })
+        cell.addEventListener('mousedown', mouseDownFunc);
+        cell.addEventListener('mouseup', mouseUpFunc);
+        cell.addEventListener('mouseover', mouseOverFunc);
       }
     }
   }
@@ -104,43 +146,7 @@ var clicked = false;
 
 
 
-//erase div
-var eraseDiv = document.createElement('div');
-eraseDiv.className = 'eraseDiv';
-colorGrid.appendChild(eraseDiv);
-
-  //Erase Button
-  var eraseButton = document.createElement('button');
-  eraseButton.id = 'erase';
-  eraseButton.innerHTML = 'erase';
-  main.appendChild(eraseButton);
-  eraseButton.addEventListener('click', function(e) {
-      selectedColor = 'white';
-  })
-
-//clear div
-var clearDiv = document.createElement('div');
-clearDiv.className = "clearDiv";
-colorGrid.appendChild(clearDiv);
-
-   //Clear Button
-  var clearButton = document.createElement('button');
-    clearButton.id = 'clear';
-    clearButton.innerHTML = 'clear';
-    main.appendChild(clearButton);
-
-    clearButton.addEventListener('click', function(e) {
-      var toBeCleared = document.getElementsByClassName('paintGridCells');
-      for(var z = 0; z < toBeCleared.length; ++z){
-        toBeCleared[z].style.backgroundColor = 'white';
-      }
-  })
 
 
-//img
-
-var img = document.createElement('img');
-img.src = './js/tv.png';
-main.appendChild(img);
 
 
