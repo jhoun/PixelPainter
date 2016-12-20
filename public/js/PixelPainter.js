@@ -4,17 +4,17 @@ var selectedColor;
 
 //The Grids
 var gridsDiv = document.createElement('div');
-gridsDiv.className = "gridsDiv";
+gridsDiv.className = 'gridsDiv';
 main.appendChild(gridsDiv);
 
   //Color Grid
   var colorGrid = document.createElement('div');
-  colorGrid.id = "colorGrid";
+  colorGrid.id = 'colorGrid';
   gridsDiv.appendChild(colorGrid);
 
    //Painting Grid
   var paintingGrid = document.createElement('div');
-  paintingGrid.id = "paintingGrid";
+  paintingGrid.id = 'paintingGrid';
   gridsDiv.appendChild(paintingGrid);
 
   var colorsArr = ['#fefa43','#fadb50', '#fef972', '#f1d781', '#39720e',
@@ -38,7 +38,7 @@ main.appendChild(gridsDiv);
         cell = document.createElement('div');
         row.appendChild(cell);
         cell.classList.add('colors');
-        cell.style.border = "thin solid black"
+        cell.style.border = 'thin solid black'
         cell.style.display = "inline-block";
         cell.style.height = '18px';
         cell.style.width = '18px';
@@ -56,7 +56,7 @@ main.appendChild(gridsDiv);
     colorCells[i].style.backgroundColor = colorsArr[i];
     colorCells[i].id = colorsArr[i];
     colorCells[i].addEventListener('click', function(e) {
-      selectedColor = e.currentTarget.id
+      selectedColor = e.currentTarget.id;
     })
   }
 
@@ -74,24 +74,22 @@ var clicked = false;
       for(var x = 0; x < numCell; x++) {
         cell = document.createElement('div');
         row.appendChild(cell);
-
-        cell.style.backgroundColor = 'none';
         // cell.style.border = '2px solid black';
         cell.classList.add('paintGridCells');
-        cell.id = "div" + x;
+        cell.id = 'div' + x;
         cell.style.backgroundColor = 'none';
-        cell.style.display = "inline-block";
+        cell.style.display = 'inline-block';
         cell.style.height = '50px';
         cell.style.width = '50px';
 
-        cell.addEventListener("mousedown", function(){
+        cell.addEventListener('mousedown', function(){
           this.style.backgroundColor = selectedColor;
           clicked = true;
         })
-        cell.addEventListener("mouseup", function() {
+        cell.addEventListener('mouseup', function() {
           clicked = false;
         })
-        cell.addEventListener("mouseover", function() {
+        cell.addEventListener('mouseover', function() {
           if(clicked) {
             this.style.backgroundColor = selectedColor;
           }
@@ -108,16 +106,16 @@ var clicked = false;
 
 //erase div
 var eraseDiv = document.createElement('div');
-eraseDiv.className = "eraseDiv";
+eraseDiv.className = 'eraseDiv';
 colorGrid.appendChild(eraseDiv);
 
   //Erase Button
   var eraseButton = document.createElement('button');
-  eraseButton.id = "erase";
-  eraseButton.innerHTML = "erase";
+  eraseButton.id = 'erase';
+  eraseButton.innerHTML = 'erase';
   main.appendChild(eraseButton);
   eraseButton.addEventListener('click', function(e) {
-      selectedColor = "white";
+      selectedColor = 'white';
   })
 
 //clear div
@@ -127,14 +125,14 @@ colorGrid.appendChild(clearDiv);
 
    //Clear Button
   var clearButton = document.createElement('button');
-    clearButton.id = "clear";
-    clearButton.innerHTML = "clear";
+    clearButton.id = 'clear';
+    clearButton.innerHTML = 'clear';
     main.appendChild(clearButton);
 
     clearButton.addEventListener('click', function(e) {
-      var toBeCleared = document.getElementsByClassName("paintGridCells");
+      var toBeCleared = document.getElementsByClassName('paintGridCells');
       for(var z = 0; z < toBeCleared.length; ++z){
-        toBeCleared[z].style.backgroundColor = "white";
+        toBeCleared[z].style.backgroundColor = 'white';
       }
   })
 
@@ -142,7 +140,7 @@ colorGrid.appendChild(clearDiv);
 //img
 
 var img = document.createElement('img');
-img.src = "./js/tv.png";
+img.src = './js/tv.png';
 main.appendChild(img);
 
 
