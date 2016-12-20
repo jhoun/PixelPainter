@@ -63,7 +63,7 @@ main.appendChild(gridsDiv);
 
 
 
-
+console.log(colorsArr.length)
 
 
   function createPaintDiv(numRows, numCell) {
@@ -94,6 +94,7 @@ main.appendChild(gridsDiv);
 
 
 
+
   createPaintDiv(25,40);
 
 
@@ -103,7 +104,7 @@ main.appendChild(gridsDiv);
 //erase div
 var eraseDiv = document.createElement('div');
 eraseDiv.className = "eraseDiv";
-main.appendChild(eraseDiv);
+colorGrid.appendChild(eraseDiv);
 
   //Erase Button
   var eraseButton = document.createElement('button');
@@ -117,7 +118,7 @@ main.appendChild(eraseDiv);
 //clear div
 var clearDiv = document.createElement('div');
 clearDiv.className = "clearDiv";
-main.appendChild(clearDiv);
+colorGrid.appendChild(clearDiv);
 
    //Clear Button
   var clearButton = document.createElement('button');
