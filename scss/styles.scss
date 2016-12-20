@@ -1,44 +1,70 @@
 @import "partials/reset";
 @import "partials/clearfix";
 
-$dark-color : aquamarine;
-
+$lighten: lighten(#2E419F, 25%);
 
 body {
-  background: $dark-color;
+  background-color: $lighten;
   h1 {
-    font-family: 'Concert One', cursive;
+    margin-top: 30px;
+    font-family: 'Rock Salt', cursive;
     font-size: 40px;
     text-align: center;
+    color: yellow;
   }
 }
 
+img{
+  position: absolute;
+  z-index: -1;
+  top: 85px;
+  right: 255px;
+  display: block;
+  margin: auto;
+}
 
 .gridsDiv {
   box-sizing: border-box;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
+
+
   #colorGrid{
     flex: 0 0 100px;
-    margin: 50px 0 0 100px;
+    margin: 50px 155px 0 0;
+    position: absolute;
+    right: 113px;
+    top: 390px;
+
   }
   #paintingGrid{
-    flex: 0 0 500px;
-    margin: 50px 0 0 0;
+    flex: 0 0 1000px;
+    position: absolute;
+    right: 520px;
+    top: 200px;
   }
 }
 
 
 #erase{
-  font-family: 'Concert One', regular;
+  position: absolute;
+  font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width:  72px
+  width:  120px;
+  height: 120px;
+  right: 260px;
+  top: 280px;
+  border-radius: 50%;
 }
 
 #clear{
-  font-family: 'Concert One', regular;
+  position: absolute;
+  font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width:  72px
+  width:  120px;
+  height: 120px;
+  right: 260px;
+  top: 150px;
+  border-radius: 50%;
 }
+

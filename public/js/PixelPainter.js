@@ -26,7 +26,7 @@ main.appendChild(gridsDiv);
   '#061773', '#371b75', '#0c1e63', '#113cf6', '#682076', '#6e46d9', '#6393e5',
   '#77faf9', '#3b8180', '#3a3c7e', '#51baf6', '#b0d3e0', '#55a9a0', '#91caf4',
   '#adbed8','#685b7f', '#686be5', '#3b6bd7', '#595bc2', '#697786', '#4c7ba9',
-  '#367575', '#74d7c8', '#a2a2a2', '#cecfce', '#000000'];
+  '#367575', '#74d7c8', '#a2a2a2', '#cecfce', '#000000', '#da8080', '#7bf194', '#79741b', '#487e4f',];
 
     function createColorDiv(numRows, numCell) {
 
@@ -40,15 +40,15 @@ main.appendChild(gridsDiv);
         cell.classList.add('colors');
         cell.style.border = "thin solid black"
         cell.style.display = "inline-block";
-        cell.style.height = '10px';
-        cell.style.width = '10px';
+        cell.style.height = '18px';
+        cell.style.width = '18px';
       }
     }
   }
 
 
 
-  createColorDiv(11,6);
+  createColorDiv(14,5);
 
 // creates the colorSwatch and lets you select a color to paint
   var colorCells =  document.querySelectorAll('div.colors');
@@ -65,7 +65,7 @@ main.appendChild(gridsDiv);
 
 console.log(colorsArr.length)
 
-
+var clicked = false;
   function createPaintDiv(numRows, numCell) {
 
     for(var i = 0; i< numRows; i++) {
@@ -75,27 +75,32 @@ console.log(colorsArr.length)
         cell = document.createElement('div');
         row.appendChild(cell);
 
-        cell.style.backgroundColor = 'white';
-        cell.style.border = "1px solid black";
+        cell.style.backgroundColor = 'none';
+        // cell.style.border = '2px solid black';
         cell.classList.add('paintGridCells');
         cell.id = "div" + x;
-        cell.style.backgroundColor = 'white';
-        cell.style.border = "thin solid black"
+        cell.style.backgroundColor = 'none';
         cell.style.display = "inline-block";
-        cell.style.height = '10px';
-        cell.style.width = '10px';
+        cell.style.height = '50px';
+        cell.style.width = '50px';
 
-        cell.addEventListener("mouseover", function(){
+        cell.addEventListener("mousedown", function(){
           this.style.backgroundColor = selectedColor;
+          clicked = true;
+        })
+        cell.addEventListener("mouseup", function() {
+          clicked = false;
+        })
+        cell.addEventListener("mouseover", function() {
+          if(clicked) {
+            this.style.backgroundColor = selectedColor;
+          }
         })
       }
     }
   }
 
-
-
-
-  createPaintDiv(25,40);
+  createPaintDiv(9,11);
 
 
 
@@ -110,7 +115,7 @@ colorGrid.appendChild(eraseDiv);
   var eraseButton = document.createElement('button');
   eraseButton.id = "erase";
   eraseButton.innerHTML = "erase";
-  eraseDiv.appendChild(eraseButton);
+  main.appendChild(eraseButton);
   eraseButton.addEventListener('click', function(e) {
       selectedColor = "white";
   })
@@ -124,7 +129,7 @@ colorGrid.appendChild(clearDiv);
   var clearButton = document.createElement('button');
     clearButton.id = "clear";
     clearButton.innerHTML = "clear";
-    clearDiv.appendChild(clearButton);
+    main.appendChild(clearButton);
 
     clearButton.addEventListener('click', function(e) {
       var toBeCleared = document.getElementsByClassName("paintGridCells");
@@ -134,11 +139,10 @@ colorGrid.appendChild(clearDiv);
   })
 
 
+//img
 
-
-
-
-
-
+var img = document.createElement('img');
+img.src = "./js/tv.png";
+main.appendChild(img);
 
 
