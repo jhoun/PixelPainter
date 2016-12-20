@@ -65,7 +65,7 @@ main.appendChild(gridsDiv);
 
 console.log(colorsArr.length)
 
-
+var clicked = false;
   function createPaintDiv(numRows, numCell) {
 
     for(var i = 0; i< numRows; i++) {
@@ -85,12 +85,25 @@ console.log(colorsArr.length)
         cell.style.height = '10px';
         cell.style.width = '10px';
 
-        cell.addEventListener("mouseover", function(){
+        cell.addEventListener("mousedown", function(){
           this.style.backgroundColor = selectedColor;
+          clicked = true;
+        })
+        cell.addEventListener("mouseup", function() {
+          clicked = false;
+        })
+        cell.addEventListener("mouseover", function() {
+          if(clicked) {
+            this.style.backgroundColor = selectedColor;
+          }
         })
       }
     }
   }
+
+
+
+
 
 
 
