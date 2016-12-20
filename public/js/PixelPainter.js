@@ -48,7 +48,7 @@ main.appendChild(gridsDiv);
 
 
 
-  createColorDiv(14,5);
+  createColorDiv(8,6);
 
 // creates the colorSwatch and lets you select a color to paint
   var colorCells =  document.querySelectorAll('div.colors');
@@ -76,7 +76,7 @@ var clicked = false;
         row.appendChild(cell);
 
         cell.style.backgroundColor = 'none';
-
+        // cell.style.border = '2px solid black';
         cell.classList.add('paintGridCells');
         cell.id = "div" + x;
         cell.style.backgroundColor = 'none';
