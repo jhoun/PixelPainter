@@ -89,20 +89,30 @@ img {
     flex: 0 0 100px;
     margin: 50px 155px 0 0;
     position: absolute;
-    right: 110px;
+    right: 113px;
     top: 390px; }
   .gridsDiv #paintingGrid {
     flex: 0 0 1000px;
     position: absolute;
-    right: 500px;
+    right: 520px;
     top: 200px; }
 
 #erase {
+  position: absolute;
   font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width: 120px; }
+  width: 120px;
+  height: 120px;
+  right: 260px;
+  top: 280px;
+  border-radius: 50%; }
 
 #clear {
+  position: absolute;
   font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width: 120px; }
+  width: 120px;
+  height: 120px;
+  right: 260px;
+  top: 150px;
+  border-radius: 50%; }

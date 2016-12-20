@@ -48,7 +48,7 @@ main.appendChild(gridsDiv);
 
 
 
-  createColorDiv(8,6);
+  createColorDiv(14,5);
 
 // creates the colorSwatch and lets you select a color to paint
   var colorCells =  document.querySelectorAll('div.colors');
@@ -115,7 +115,7 @@ colorGrid.appendChild(eraseDiv);
   var eraseButton = document.createElement('button');
   eraseButton.id = "erase";
   eraseButton.innerHTML = "erase";
-  eraseDiv.appendChild(eraseButton);
+  main.appendChild(eraseButton);
   eraseButton.addEventListener('click', function(e) {
       selectedColor = "white";
   })
@@ -129,7 +129,7 @@ colorGrid.appendChild(clearDiv);
   var clearButton = document.createElement('button');
     clearButton.id = "clear";
     clearButton.innerHTML = "clear";
-    clearDiv.appendChild(clearButton);
+    main.appendChild(clearButton);
 
     clearButton.addEventListener('click', function(e) {
       var toBeCleared = document.getElementsByClassName("paintGridCells");
