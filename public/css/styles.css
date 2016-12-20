@@ -64,16 +64,20 @@ table {
   display: block; }
 
 /* close commented backslash hack */
-body h1 {
-  font-family: 'Concert One', cursive;
-  font-size: 40px;
-  text-align: center; }
+body {
+  background-color: #7586d7; }
+  body h1 {
+    margin-top: 30px;
+    font-family: 'Rock Salt', cursive;
+    font-size: 40px;
+    text-align: center;
+    color: yellow; }
 
 img {
   position: absolute;
   z-index: -1;
-  top: 50px;
-  left: 450px;
+  top: 85px;
+  left: 255px;
   display: block;
   margin: auto; }
 
@@ -81,24 +85,21 @@ img {
   box-sizing: border-box;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0 0 0;
   position: absolute;
-  left: 620px;
-  top: 120px; }
+  left: 140px;
+  top: 200px; }
   .gridsDiv #colorGrid {
     flex: 0 0 100px;
-    margin: 50px 0 0 100px; }
+    margin: 50px 155px 0 0; }
   .gridsDiv #paintingGrid {
     flex: 0 0 1000px; }
 
 #erase {
-  font-family: 'Concert One', regular;
+  font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width: 72px; }
+  width: 100px; }
 
 #clear {
-  font-family: 'Concert One', regular;
+  font-family: 'Rock Salt', cursive;
   font-size: 20px;
-  width: 72px; }
+  width: 100px; }
