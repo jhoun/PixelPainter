@@ -75,15 +75,12 @@ var clicked = false;
         cell = document.createElement('div');
         row.appendChild(cell);
 
-        cell.style.backgroundColor = 'white';
-        cell.style.border = "1px solid black";
+        cell.style.backgroundColor = 'none';
         cell.classList.add('paintGridCells');
         cell.id = "div" + x;
-        cell.style.backgroundColor = 'white';
-        cell.style.border = "thin solid black"
         cell.style.display = "inline-block";
-        cell.style.height = '10px';
-        cell.style.width = '10px';
+        cell.style.height = '50px';
+        cell.style.width = '50px';
 
         cell.addEventListener("mousedown", function(){
           this.style.backgroundColor = selectedColor;
@@ -101,14 +98,7 @@ var clicked = false;
     }
   }
 
-
-
-
-
-
-
-
-  createPaintDiv(25,40);
+  createPaintDiv(9,11);
 
 
 
@@ -147,11 +137,10 @@ colorGrid.appendChild(clearDiv);
   })
 
 
+//img
 
-
-
-
-
-
+var img = document.createElement('img');
+img.src = "./js/tv.png";
+main.appendChild(img);
 
 
