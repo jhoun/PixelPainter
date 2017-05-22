@@ -2,13 +2,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
-gulp.task('connect', function(){
-  connect.server({
-    root: 'public',
-    port: process.env.PORT,
-    livereload: false
-  });
-});
+// gulp.task('connect', function(){
+//   connect.server({
+//     root: 'public',
+//     port: process.env.PORT,
+//     livereload: false
+//   });
+// });
 
 // keeps gulp from crashing for scss errors
 gulp.task('sass', function () {
@@ -27,4 +27,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', ['connect', 'watch', 'sass']);
+gulp.task('default', [/*'connect', */'watch', 'sass']);
