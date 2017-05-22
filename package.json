@@ -4,7 +4,7 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp default"
+    "postinstall": "gulp connect"
   },
   "repository": {
     "type": "git",
