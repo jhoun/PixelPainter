@@ -2,26 +2,18 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
-// gulp.task('connect', function(){
-//   connect.server({
-//     root: 'public',
-//     livereload: true
-//   });
-// });
+gulp.task('connect', function(){
+  connect.server({
+    root: 'public',
+    livereload: true
+  });
+});
 
 // keeps gulp from crashing for scss errors
 gulp.task('sass', function () {
   return gulp.src('./scss/styles.scss')
       .pipe(sass({ errLogToConsole: true }))
       .pipe(gulp.dest('./public/css'));
-});
-
-gulp.task('serveprod', function() {
-  connect.server({
-    root: 'public',
-    port: process.env.PORT || 3000, // localhost:5000
-    livereload: false
-  });
 });
 
 gulp.task('livereload', function (){
@@ -34,4 +26,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', ['watch', 'sass', 'serveprod']);
+gulp.task('default', ['connect', 'watch', 'sass']);
