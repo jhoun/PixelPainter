@@ -4,8 +4,8 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-     "start": "nodemon app.js",
-     "heroku-postbuild": "gulp"
+    "start": "node app",
+    "postinstall": "gulp default"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,10 @@
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0"
 },
+"engines": {
+    "node": "v6.8.0",
+    "npm": "3.10.8"
+  },
   "esnext": true,
   "space": true,
   "globals": [
