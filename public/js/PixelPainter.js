@@ -77,7 +77,7 @@ function createColorDiv(numRows, numCell) {
     colorGrid.appendChild(row);
     for(var x = 0; x < numCell; x++) {
       var colorCounter = 0
-      cell = document.createElement('div');
+      var cell = document.createElement('div');
       row.appendChild(cell);
       cell.classList.add('colors');
       cell.style.border = 'thin solid black'
@@ -99,6 +99,7 @@ function createColorDiv(numRows, numCell) {
     colorCells[i].id = colorsArr[i];
     colorCells[i].addEventListener('click', function(e) {
       selectedColor = e.currentTarget.id;
+      console.log(selectedColor);
     })
   }
 

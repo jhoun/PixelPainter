@@ -16,6 +16,14 @@ gulp.task('sass', function () {
       .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('serveprod', function() {
+  connect.server({
+    root: 'public',
+    port: process.env.PORT || 3000, // localhost:3000
+    livereload: false
+  });
+});
+
 gulp.task('livereload', function (){
   gulp.src('./public/**/*')
   .pipe(connect.reload());
@@ -26,4 +34,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', ['connect', 'watch', 'sass']);
+gulp.task('default', [/*'connect',*/ 'watch', 'sass', 'serveprod']);

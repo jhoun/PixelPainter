@@ -24,7 +24,7 @@
     ]
   },
   "homepage": "https://github.com/jhoun/PixelPainter#readme",
-  "devDependencies": {
+  "dependencies": {
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0"
