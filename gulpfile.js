@@ -2,12 +2,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
-gulp.task('connect', function(){
-  connect.server({
-    root: 'public',
-    livereload: true
-  });
-});
+// gulp.task('connect', function(){
+//   connect.server({
+//     root: 'public',
+//     livereload: true
+//   });
+// });
 
 // keeps gulp from crashing for scss errors
 gulp.task('sass', function () {
@@ -34,4 +34,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', ['connect', 'watch', 'sass', 'serveprod']);
+gulp.task('default', [/*'connect',*/ 'watch', 'sass', 'serveprod']);
