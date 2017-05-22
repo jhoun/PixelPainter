@@ -4,8 +4,7 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "start": "node app",
-    "postinstall": "gulp default",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -31,7 +30,7 @@
     "gulp-sass": "^3.0.0"
 },
 "engines": {
-    "node": "6.8.0",
+    "node": "v6.8.0",
     "npm": "3.10.8"
   },
   "esnext": true,
