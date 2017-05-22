@@ -4,6 +4,8 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
+    "build": "gulp",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
