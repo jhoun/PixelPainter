@@ -19,7 +19,7 @@ gulp.task('sass', function () {
 gulp.task('serveprod', function() {
   connect.server({
     root: 'public',
-    port: process.env.PORT || 3000, // localhost:3000
+    port: process.env.PORT || 5000, // localhost:5000
     livereload: false
   });
 });
@@ -34,4 +34,4 @@ gulp.task('watch', function () {
   gulp.watch('./public/**/*', ['livereload']);
 });
 
-gulp.task('default', [/*'connect',*/ 'watch', 'sass', 'serveprod']);
+gulp.task('default', ['connect', 'watch', 'sass', 'serveprod']);
