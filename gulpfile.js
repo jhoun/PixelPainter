@@ -2,13 +2,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
 
-// gulp.task('connect', function(){
-//   connect.server({
-//     root: 'public',
-//     port: process.env.PORT || 3000,
-//     livereload: false
-//   });
-// });
+gulp.task('connect', function(){
+  connect.server({
+    root: 'public',
+    port: process.env.PORT || 3000,
+    livereload: false
+  });
+});
 
 // keeps gulp from crashing for scss errors
 gulp.task('sass', function () {
