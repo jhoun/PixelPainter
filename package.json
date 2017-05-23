@@ -4,7 +4,7 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/gulp/bin/gulp build"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +25,12 @@
   },
   "homepage": "https://github.com/jhoun/PixelPainter#readme",
   "dependencies": {
+    "express": "^4.15.3",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0"
-},
-"engines": {
+  },
+  "engines": {
     "node": "v6.8.0",
     "npm": "3.10.8"
   },
@@ -39,4 +40,3 @@
     "window"
   ]
 }
-
