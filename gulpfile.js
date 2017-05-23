@@ -29,6 +29,6 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['connect', 'watch', 'sass']);
 
-gulp.task('heroku:production', function() {
-  runSeq('connect', 'watch', 'sass')
-})
+// gulp.task('heroku:production', function() {
+//   runSeq('connect', 'watch', 'sass')
+// })
