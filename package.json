@@ -4,7 +4,6 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "postinstall": "gulp heroku:production"
   },
   "repository": {
     "type": "git",
