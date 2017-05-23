@@ -1,1 +1,1 @@
-web: node PixelPainter.js
+web: node server.js
