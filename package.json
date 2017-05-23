@@ -4,7 +4,8 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "start": "node PixelPainer.js"
+    "start": "node server.js",
+    "postinstall": "gulp heroku:production"
   },
   "repository": {
     "type": "git",
