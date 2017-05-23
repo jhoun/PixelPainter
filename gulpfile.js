@@ -28,4 +28,4 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['connect', 'watch', 'sass']);
 
-gulp.tasks('heroku:prod', [default]);
+gulp.tasks('heroku:production', [default]);
