@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var connect = require('gulp-connect');
+var runSeq = require('run-sequence');
 
 gulp.task('connect', function(){
   connect.server({
@@ -28,4 +29,6 @@ gulp.task('watch', function () {
 
 gulp.task('default', ['connect', 'watch', 'sass']);
 
-gulp.task('heroku:production', [default]);
+gulp.task('heroku:production', function() {
+  runSeq('connect', 'watch', 'sass')
+})
