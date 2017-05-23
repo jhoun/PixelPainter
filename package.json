@@ -4,7 +4,7 @@
   "description": "PixelPainter ============",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node PixelPainer.js"
   },
   "repository": {
     "type": "git",
