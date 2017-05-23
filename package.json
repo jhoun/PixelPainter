@@ -24,13 +24,14 @@
   },
   "homepage": "https://github.com/jhoun/PixelPainter#readme",
   "dependencies": {
-    "express": "^4.15.3"
-  },
-  "devDependencies": {
+    "express": "^4.15.3",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.0.0",
     "gulp-sass": "^3.0.0",
     "run-sequence": "^1.2.2"
+  },
+  "devDependencies": {
+
   },
   "engines": {
     "node": "v6.8.0",
