@@ -17,10 +17,10 @@ PixelPainter allows you to paint anything your heart desires. It has a color swa
 ## Build Steps
 
 
-- install dependencies..
+1. install dependencies
 
-...`npm install`
+  `npm install`
 
-- run app..
+2. run app
 
-...`npm start`
+  `npm start`
