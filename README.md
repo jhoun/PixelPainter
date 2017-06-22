@@ -19,8 +19,8 @@ PixelPainter allows you to paint anything your heart desires. It has a color swa
 
 1. install dependencies
 
-  `npm install`
+      `npm install`
 
 2. run app
 
-  `npm start`
+      `npm start`
